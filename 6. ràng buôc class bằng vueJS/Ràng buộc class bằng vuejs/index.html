@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-bind:class="[status, this.test ? 'test' : 'noteest']">{{title}}</h1>
+        <div>{{content}}</div>
+        <div>{{published}}</div>
+        <div>{{active}}</div>
+        <button v-on:click="changeStatus()">
+            <p v-if="active">active</p>
+            <p v-if="!active">unactive</p>
+        </button>
+    </div>
+</body>
+</html>
+<script src="./app.js"></script>
+<style>
+    .active{
+        color: green;
+    }
+    .in-active{
+        color: red;
+    }
+</style>

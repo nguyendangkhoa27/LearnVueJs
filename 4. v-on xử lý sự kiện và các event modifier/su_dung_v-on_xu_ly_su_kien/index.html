@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="./index.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="title" v-on:mousemove="showLocationPointer($event)">
+           <img class="img-title" src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t1.6435-9/172233688_1193275917797110_8507875311041240790_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=be3454&_nc_ohc=zn3yokBh4nQAX-mNwUX&_nc_ht=scontent.fsgn5-15.fna&oh=00_AfB-Onpj1ZjHs2biaxvginvmrX2Ha18Rju4xTWAu4fzGkg&oe=65B7E8F4" >
+        </div>
+        <div class="content">
+            <div>ClientX: {{clientX}}</div>
+            <div>ClientY: {{clientY}}</div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="./index.js"></script>

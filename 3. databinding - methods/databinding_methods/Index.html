@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="centerd-div" id='app'>
+            <div class="header">
+                <img class="img-product" v-bind:src="url"/>
+                <div class="info-product">
+                    <h2 class="title-product">{{title}}</h2>
+                    <p class="brand-product">Brand: {{brand}}</p>
+                    <p class="brand-product"> {{formatMoney}}</p>
+                    <div>
+                        <label>màu sắc: {{color}}</label>
+                        <div class="color-product">
+                            <button v-on:click="pickColor(color)" class="colors" v-for="color in colors" :style="{'background-color': color}"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                {{description}}
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
+<style>
+    body{
+        margin: 0;
+        border: 0;
+        font-size: 20px;
+        box-sizing: border-box;
+    }
+    .colors{
+        margin: 5px;
+        width: 30px;
+        height: 30px;
+    }
+    .color-product{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+    .title-product{
+        margin: 0;
+    }
+    .img-product{
+        border: 1px solid rgb(172, 170, 170);
+        width: 200px;
+        height: 200px;
+        margin-right: 20px;
+    }
+    .info-product{
+        padding: 10px;
+        display: inline-block;
+    }
+    .description{
+        padding: 10px;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .centerd-div{
+        border: 1px solid cornflowerblue;
+        width: 800px;
+        padding: 5px;
+        display: grid;
+        grid-template-rows:  auto 1fr;
+    }
+    .header{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr;
+    }
+</style>
+<script src="./main.js"></script>  

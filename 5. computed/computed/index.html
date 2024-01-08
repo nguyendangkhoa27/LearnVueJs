@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>{{title}}</div>
+        <div>{{content}}</div>
+        <div>{{published}}</div>
+        <input type="text" name="published" v-model="published" v-on:change="increase(10)">
+    </div>
+    <div id="app2">
+        <button v-on:click="a++">a++</button>
+        <button v-on:click="b++">b++</button>
+        <div>{{number}} + {{a}} = {{addA("eee")}}</div>
+        <div>{{number}} + {{b}} = {{addB()}}</div>
+        <div>{{addC()}}</div>
+    </div>
+</body>
+</html>
+<script src="app.js"></script>

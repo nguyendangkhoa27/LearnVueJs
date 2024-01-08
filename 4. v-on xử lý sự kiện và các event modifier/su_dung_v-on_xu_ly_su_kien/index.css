@@ -1,0 +1,18 @@
+#app{
+    border: 1px solid #fff;
+    width: 800px;
+    height: 400px;
+    display: grid;
+    grid-template-columns:1fr  1fr;
+}
+body{
+    background-color: #000;
+    color: #fff;
+}
+.img-title{
+    width: 100%;
+}
+
+.content{
+    font-size: 25px;
+}
