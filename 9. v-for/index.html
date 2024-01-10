@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 style="color: yellow;">Khuyên dùng</h1>
+        <h1>nên dùng for kết hợp với computed để render dữ liệu</h1>
+        <ul>
+            <li v-for="(post,index) in postsActive" v-bind:key="index">
+                <div v-bind:class="post.status.activeName">{{post.title}} {{post.id}}</div>
+                <div>{{post.content}}</div>
+                <div v-if="post.status.active">đã active</div>
+                <button v-on:click="ChangeStatus(post)">{{post.status.activeName}}</button>
+            </li>
+        </ul>
+        <hr/>
+        <h1>không nên dùng v-for + v-if để render dữ liệu vì nó sẽ sinh ra những dòng comment không mong muốn</h1>
+        <ul>
+            <li v-for="(post,index) in posts" v-if="post.status.active" v-bind:key="index">
+                <div v-bind:class="post.status.activeName">{{post.title}} {{post.id}}</div>
+                <div>{{post.content}}</div>
+                <div v-if="post.status.active">đã active</div>
+                <button v-on:click="ChangeStatus(post)">{{post.status.activeName}}</button>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+<script src="app.js"></script>
+<style>
+    .active{
+        color: greenyellow;
+    }
+    .in-active{
+        color: red;
+    }
+</style>

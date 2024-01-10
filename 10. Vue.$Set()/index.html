@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(value,key) in this.score">{{key}}: {{value}} </li>
+        </ul>
+    </div>
+</body>
+</html>
+<script src="app.js"></script>
+
+<script>
+    // trong javacscipt khi chúng ta truy cập đến một thuộc tính chưa tồn tại trong object hoặc array
+    //thì nó sẽ trả về undefind chứ không thông báo lỗi như các ngôn ngữ lập trình khác.
+    // và khi chúng ta gán giá trị cho nó thì object đó sẽ có thuộc tính đó với giá trị vừa gán
+    // việc js cho khởi tạo thuộc tính của object vô tội vạ cũng có nhiều mặt lợi ích, nhưng
+    // việc khi phát triển một ứng dụng phức tạo mà quản lý obj vô tội vạ như thế sẽ làm phức tạp dự án.
+    // vuejs không cho phép điều đó sảy ra nên vuejs không hợp thức hóa việc gán giá trị vào một thuộc tính chưa tồn tại trong object.
+    // với vuejs nếu muốn tạo thuộc tính và gán một giá trị mới cho obj thì phải thông qua vue với phương thức $set(obj,key,value) trong đối tượng vue,
+    vm.$set(vm.score,"Math",10);
+
+    console.log(vm.score)
+</script>
